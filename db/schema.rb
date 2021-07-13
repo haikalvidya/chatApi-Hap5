@@ -12,14 +12,11 @@
 
 ActiveRecord::Schema.define(version: 2021_07_13_043057) do
 
-  # These are extensions that must be enabled in order to support this database
-  enable_extension "plpgsql"
-
   create_table "chat_rooms", force: :cascade do |t|
     t.string "title"
-    t.bigint "sender_id", null: false
-    t.bigint "recipient_id", null: false
-    t.bigint "created_id", null: false
+    t.integer "sender_id", null: false
+    t.integer "recipient_id", null: false
+    t.integer "created_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.index ["created_id"], name: "index_chat_rooms_on_created_id"
@@ -30,8 +27,8 @@ ActiveRecord::Schema.define(version: 2021_07_13_043057) do
 
   create_table "messages", force: :cascade do |t|
     t.string "body"
-    t.bigint "user_id", null: false
-    t.bigint "chat_room_id", null: false
+    t.integer "user_id", null: false
+    t.integer "chat_room_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.index ["chat_room_id"], name: "index_messages_on_chat_room_id"

@@ -9,6 +9,6 @@ class CreateChatRooms < ActiveRecord::Migration[6.1]
       t.timestamps
     end
     add_index :chat_rooms, :title, unique: true
-    add_index :chat_rooms, :sender_id
+    # add_index :chat_rooms, :sender_id
   end
 end
