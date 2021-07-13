@@ -8,10 +8,10 @@ The project provide backend functionality for basic the chat. Project consists i
 ```bundle install```
 
 ### Run Migration
-```rake db:migration```
+```rails db:migrate```
 
 ### Load Initial Data
-```rake db:seed```
+```rails db:seed```
 
 ### Run App
 ``` rails s```
