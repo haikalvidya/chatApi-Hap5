@@ -33,12 +33,12 @@ class MessagesController < ActionController::API
 
   # PUT /chat_rooms/:chat_room_id/messages/:id
   def update
-    if message_params[:user_id].to_i == @chat_room.sender_id or message_params[:user_id].to_i == @chat_room.recipient_id
-      @message.update(message_params)
-      head :no_content
-    else
-      json_response({ "message": "user_id cant create chat in this room" }, :unprocessable_entity)
-    end
+    # if message_params[:user_id].to_i == @chat_room.sender_id or message_params[:user_id].to_i == @chat_room.recipient_id
+    @message.update(message_params)
+    head :no_content
+    # else
+      # json_response({ "message": "user_id cant create chat in this room" }, :unprocessable_entity)
+    # end
   end
 
   # DELETE /chat_rooms/:chat_room_id/messages/:id

@@ -31,7 +31,11 @@ Before sending a message need to create a Chat Room.
 
 The above request creates a Chat Room for user_id=1 and user_id=2. After that compose a message or send a message.
 
-```curl -i -X POST -H "Content-Type:application/json" http://localhost:3000/chat_rooms/1/messages -d '{"body": "This is new message", "user_id": 1}'``` 
+```curl -i -X POST -H "Content-Type:application/json" http://localhost:3000/chat_rooms/1/messages -d '{"body": "This is new message", "user_id": 1}'```
+
+Or create a Chat Room and a New Message can be combined in the following way.
+
+```curl -i -X POST -H "Content-Type:application/json" http://localhost:3000/chat_rooms/newmessage -d '{"title": "Friend", "created_id": 1, "sender_id": 1, "recipient_id": 2, "body": "This is new message from new chatroom"}'``` 
 
 To see all messages that have ever been sent, you can see with the following request.
 
